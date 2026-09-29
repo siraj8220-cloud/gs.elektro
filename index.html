@@ -8,14 +8,16 @@
 </head>
 <body>
 
+    <!-- Шапка -->
     <header class="header">
         <div class="container header-box">
             <div class="logo">⚡ Электрик-Мастер</div>
+            <!-- Ваш номер телефона успешно добавлен сюда -->
             <a href="tel:+79285903900" class="phone">📞 +7 (928) 590-39-00</a>
         </div>
     </header>
 
-    <!-- Темный блок (Фото ставится фоном через CSS) -->
+    <!-- Главный баннер с квадратным фоном -->
     <section class="hero">
         <div class="container">
             <h1>Услуги электрика с гарантией</h1>
@@ -24,48 +26,40 @@
         </div>
     </section>
 
-    <!-- Белый блок (Внутри добавлена сетка с таблицей и вторым фото) -->
+    <!-- Цены -->
     <section class="services">
         <div class="container">
             <h2>Цены на основные работы</h2>
-            
-            <div class="services-grid">
-                <table class="price-table">
-                    <thead>
-                        <tr>
-                            <th>Вид работы</th>
-                            <th>Стоимость</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Выезд и диагностика (при заказе работ)</td>
-                            <td class="price-tag">Бесплатно</td>
-                        </tr>
-                        <tr>
-                            <td>Монтаж / замена розетки или выключателя</td>
-                            <td class="price-tag">от 250 руб.</td>
-                        </tr>
-                        <tr>
-                            <td>Сборка и подключение электрощита</td>
-                            <td class="price-tag">от 3 000 руб.</td>
-                        </tr>
-                        <tr>
-                            <td>Штробление стен под проводку (метр)</td>
-                            <td class="price-tag">от 350 руб.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <!-- Второе фото (prices.jpg) отображается рядом с таблицей -->
-                <div class="services-image-box">
-                    <img src="prices.jpg" alt="Моя работа" class="services-img">
-                </div>
-            </div>
-            
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Вид работы</th>
+                        <th>Стоимость</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Выезд и диагностика (при заказе работ)</td>
+                        <td class="price-tag">Бесплатно</td>
+                    </tr>
+                    <tr>
+                        <td>Монтаж / замена розетки или выключателя</td>
+                        <td class="price-tag">от 250 руб.</td>
+                    </tr>
+                    <tr>
+                        <td>Сборка и подключение электрощита</td>
+                        <td class="price-tag">от 3 000 руб.</td>
+                    </tr>
+                    <tr>
+                        <td>Штробление стен под проводку (метр)</td>
+                        <td class="price-tag">от 350 руб.</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
+    <!-- Контакты и Форма -->
     <section class="contacts" id="order-form">
         <div class="container">
             <div class="form-wrapper">
@@ -74,7 +68,7 @@
                 <form id="callbackForm">
                     <div class="input-group">
                         <label>Ваше имя:</label>
-                        <input type="text" id="name" placeholder="Гаджиомар" required>
+                        <input type="text" id="name" placeholder="Иван" required>
                     </div>
                     <div class="input-group">
                         <label>Телефон:</label>
@@ -96,5 +90,3 @@
 
 </body>
 </html>
-
-

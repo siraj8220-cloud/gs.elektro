@@ -1,4 +1,4 @@
-/* Базовые сбросы */
+/* Базовые настройки */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -45,24 +45,28 @@ body {
     font-size: 18px;
 }
 
-/* ТЕМНЫЙ БЛОК: Ставим фото bg.jpg на задний план с затемнением */
+/* ГЛАВНЫЙ БЛОК: Фото 1440x1440 помещается ПОЛНОСТЬЮ благодаря /contain */
 .hero {
-    background: linear-gradient(rgba(26, 32, 44, 0.85), rgba(26, 32, 44, 0.85)), url('bg.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(26, 32, 44, 0.75), rgba(26, 32, 44, 0.75)), url('bg.jpg') no-repeat center center/contain;
+    background-color: #1a202c; /* Темный фон по бокам, если экран шире картинки */
     color: #fff;
-    padding: 100px 0;
+    padding: 160px 0; /* Большие отступы, чтобы квадратному фото хватило места */
     text-align: center;
+    width: 100%;
 }
 
 .hero h1 {
-    font-size: 36px;
+    font-size: 42px;
     margin-bottom: 15px;
     color: #fff;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8); /* Тень, чтобы текст хорошо читался */
 }
 
 .hero p {
-    font-size: 18px;
+    font-size: 20px;
     color: #cbd5e0;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
 }
 
 /* Кнопки */
@@ -70,14 +74,15 @@ body {
     display: inline-block;
     background-color: #ecc94b;
     color: #1a202c;
-    padding: 14px 30px;
+    padding: 14px 35px;
     font-weight: bold;
     text-decoration: none;
     border-radius: 5px;
     border: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     transition: background 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .btn:hover {
@@ -88,7 +93,7 @@ body {
     width: 100%;
 }
 
-/* БЕЛЫЙ БЛОК: Сетка для расположения таблицы и второго фото */
+/* Прайс-лист */
 .services {
     padding: 60px 0;
     background-color: #fff;
@@ -100,16 +105,8 @@ body {
     font-size: 28px;
 }
 
-.services-grid {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-    flex-wrap: wrap; /* Чтобы на телефонах картинка переносилась под таблицу */
-}
-
 .price-table {
-    flex: 1;
-    min-width: 300px;
+    width: 100%;
     border-collapse: collapse;
 }
 
@@ -129,23 +126,6 @@ body {
     font-weight: bold;
     color: #b7791f;
     text-align: right;
-}
-
-/* Настройки для второго фото (prices.jpg) */
-.services-image-box {
-    flex: 1;
-    min-width: 300px;
-    display: flex;
-    justify-content: center;
-}
-
-.services-img {
-    width: 100%;
-    max-width: 450px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    object-fit: cover;
 }
 
 /* Блок контактов */
@@ -198,18 +178,21 @@ body {
 }
 
 /* Мобильная адаптация */
-max-width: 600px {
+max-width: 768px {
     .header-box {
         flex-direction: column;
         gap: 10px;
     }
+    .hero {
+        padding: 80px 0; /* Уменьшаем высоту на смартфонах */
+    }
     .hero h1 {
         font-size: 26px;
     }
+    .hero p {
+        font-size: 16px;
+    }
     .price-table th, .price-table td {
         font-size: 14px;
-    }
-    .services-grid {
-        flex-direction: column;
     }
 }
