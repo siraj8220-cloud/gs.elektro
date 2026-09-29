@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты электрика | Оставить заявку</title>
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-box">
+            <a href="index.html" class="logo"><span class="bolt-icon">⚡</span> ELEKTRO<span class="accent-text">.PRO</span></a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="prices.html">Цены</a></li>
+                <li><a href="portfolio.html">Портфолио</a></li>
+                <li><a href="contacts.html" class="active">Контакты</a></li>
+            </ul>
+            <div class="header-contacts">
+                <a href="tel:+79285903900" class="phone-link"><i class="fa-solid fa-phone"></i> +7 (928) 590-39-00</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="container">
+            <h1 class="page-title">Связаться со мной</h1>
+            <p class="page-subtitle">Оперативно отвечу на любые вопросы и сориентирую по стоимости</p>
+            
+            <div class="contacts-wrapper">
+                <div class="info-box">
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4>Зона обслуживания</h4>
+                            <p>г. Махачкала и пригородные районы</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <h4>Прямой номер</h4>
+                            <p><a href="tel:+79285903900" style="color: #fff; text-decoration: none;">+7 (928) 590-39-00</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <h4>Режим работы</h4>
+                            <p>Прием аварийных заявок круглосуточно 24/7</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-glass-box">
+                    <form id="pageContactForm">
+                        <div class="input-group">
+                            <label>Ваше имя</label>
+                            <input type="text" placeholder="Александр" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Ваш телефон</label>
+                            <input type="tel" placeholder="+7 (928) 000-00-00" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Что требуется сделать?</label>
+                            <textarea rows="4" placeholder="Например: Проводка под ключ в трешке"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-block">Отправить заявку</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer"><div class="container">© 2026 ELEKTRO.PRO</div></footer>
+
+    <script>
+        document.getElementById('pageContactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Мега-круто! Заявка отправлена. Мастер свяжется с вами в течение 5 минут.');
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>
