@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Услуги профессионального электрика</title>
-    <!-- Подключаем стили из отдельного файла -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,6 +15,7 @@
         </div>
     </header>
 
+    <!-- Темный блок (Фото ставится фоном через CSS) -->
     <section class="hero">
         <div class="container">
             <h1>Услуги электрика с гарантией</h1>
@@ -24,35 +24,45 @@
         </div>
     </section>
 
+    <!-- Белый блок (Внутри добавлена сетка с таблицей и вторым фото) -->
     <section class="services">
         <div class="container">
             <h2>Цены на основные работы</h2>
-            <table class="price-table">
-                <thead>
-                    <tr>
-                        <th>Вид работы</th>
-                        <th>Стоимость</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Выезд и диагностика (при заказе работ)</td>
-                        <td class="price-tag">Бесплатно</td>
-                    </tr>
-                    <tr>
-                        <td>Монтаж / замена розетки или выключателя</td>
-                        <td class="price-tag">от 250 руб.</td>
-                    </tr>
-                    <tr>
-                        <td>Сборка и подключение электрощита</td>
-                        <td class="price-tag">от 3 000 руб.</td>
-                    </tr>
-                    <tr>
-                        <td>Штробление стен под проводку (метр)</td>
-                        <td class="price-tag">от 350 руб.</td>
-                    </tr>
-                </tbody>
-            </table>
+            
+            <div class="services-grid">
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Вид работы</th>
+                            <th>Стоимость</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Выезд и диагностика (при заказе работ)</td>
+                            <td class="price-tag">Бесплатно</td>
+                        </tr>
+                        <tr>
+                            <td>Монтаж / замена розетки или выключателя</td>
+                            <td class="price-tag">от 250 руб.</td>
+                        </tr>
+                        <tr>
+                            <td>Сборка и подключение электрощита</td>
+                            <td class="price-tag">от 3 000 руб.</td>
+                        </tr>
+                        <tr>
+                            <td>Штробление стен под проводку (метр)</td>
+                            <td class="price-tag">от 350 руб.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- Второе фото (prices.jpg) отображается рядом с таблицей -->
+                <div class="services-image-box">
+                    <img src="prices.jpg" alt="Моя работа" class="services-img">
+                </div>
+            </div>
+            
         </div>
     </section>
 
@@ -86,6 +96,5 @@
 
 </body>
 </html>
-
 
 

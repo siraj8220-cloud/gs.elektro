@@ -45,11 +45,11 @@ body {
     font-size: 18px;
 }
 
-/* Главный блок */
+/* ТЕМНЫЙ БЛОК: Ставим фото bg.jpg на задний план с затемнением */
 .hero {
-    background-color: #2d3748;
+    background: linear-gradient(rgba(26, 32, 44, 0.85), rgba(26, 32, 44, 0.85)), url('bg.jpg') no-repeat center center/cover;
     color: #fff;
-    padding: 80px 0;
+    padding: 100px 0;
     text-align: center;
 }
 
@@ -88,7 +88,7 @@ body {
     width: 100%;
 }
 
-/* Прайс-лист */
+/* БЕЛЫЙ БЛОК: Сетка для расположения таблицы и второго фото */
 .services {
     padding: 60px 0;
     background-color: #fff;
@@ -100,8 +100,16 @@ body {
     font-size: 28px;
 }
 
+.services-grid {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap; /* Чтобы на телефонах картинка переносилась под таблицу */
+}
+
 .price-table {
-    width: 100%;
+    flex: 1;
+    min-width: 300px;
     border-collapse: collapse;
 }
 
@@ -121,6 +129,23 @@ body {
     font-weight: bold;
     color: #b7791f;
     text-align: right;
+}
+
+/* Настройки для второго фото (prices.jpg) */
+.services-image-box {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.services-img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
 }
 
 /* Блок контактов */
@@ -183,5 +208,8 @@ max-width: 600px {
     }
     .price-table th, .price-table td {
         font-size: 14px;
+    }
+    .services-grid {
+        flex-direction: column;
     }
 }
