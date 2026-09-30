@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Цены на услуги электрика | Прайс-лист</title>
+    <title>Прайс-лист и онлайн-расчет | ELEKTRO.PRO</title>
     <link rel="stylesheet" href="https://cloudflare.com">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Шапка -->
     <header class="header">
         <div class="container header-box">
             <a href="index.html" class="logo"><span class="bolt-icon">⚡</span> ELEKTRO<span class="accent-text">.PRO</span></a>
@@ -26,34 +27,110 @@
 
     <main class="page-content">
         <div class="container">
-            <h1 class="page-title">Фиксированный прайс-лист</h1>
-            <p class="page-subtitle">Цены прозрачны и утверждаются до начала проведения любых работ</p>
+            <h1 class="page-title">Цены и Смета Онлайн</h1>
+            <p class="page-subtitle">Выберите необходимые услуги, чтобы моментально узнать предварительную стоимость работ</p>
             
-            <div class="table-wrapper">
-                <table class="price-table">
-                    <thead>
-                        <tr>
-                            <th>Наименование электромонтажных работ</th>
-                            <th>Стоимость услуги</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Выезд на объект и диагностика неисправностей проводки</td><td class="price-tag">Бесплатно *</td></tr>
-                        <tr><td>Монтаж, перенос или замена розетки / выключателя (1 ед.)</td><td class="price-tag">от 250 ₽</td></tr>
-                        <tr><td>Установка, сборка и надежное подключение люстры/светильника</td><td class="price-tag">от 600 ₽</td></tr>
-                        <tr><td>Сборка, маркировка распределительного щита под ключ</td><td class="price-tag">от 3 000 ₽</td></tr>
-                        <tr><td>Штробление бетонных/кирпичных стен под кабель (за метр)</td><td class="price-tag">от 350 ₽</td></tr>
-                        <tr><td>Полный монтаж проводки в новостройке под ключ</td><td class="price-tag">от 25 000 ₽</td></tr>
-                    </tbody>
-                </table>
+            <!-- Мега-Навороченный Интерактивный Калькулятор -->
+            <div class="calculator-card">
+                <h3><i class="fa-solid fa-calculator text-amber"></i> Интерактивный расчет стоимости</h3>
+                <p style="color: #64748b; font-size: 14px; margin-bottom: 25px;">Отметьте галочками пункты или укажите количество</p>
+                
+                <div class="calc-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="service1" data-price="250" onchange="calculateTotal()">
+                        <span class="checkmark"></span>
+                        <span class="calc-name">Монтаж или замена розетки / выключателя</span>
+                    </label>
+                    <div class="count-selector">
+                        <input type="number" id="qty1" value="1" min="1" oninput="calculateTotal()">
+                        <span class="calc-unit">шт.</span>
+                    </div>
+                    <span class="calc-price-item">от 250 ₽</span>
+                </div>
+
+                <div class="calc-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="service2" data-price="600" onchange="calculateTotal()">
+                        <span class="checkmark"></span>
+                        <span class="calc-name">Установка и сборка люстры / светильника</span>
+                    </label>
+                    <div class="count-selector">
+                        <input type="number" id="qty2" value="1" min="1" oninput="calculateTotal()">
+                        <span class="calc-unit">шт.</span>
+                    </div>
+                    <span class="calc-price-item">от 600 ₽</span>
+                </div>
+
+                <div class="calc-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="service3" data-price="350" onchange="calculateTotal()">
+                        <span class="checkmark"></span>
+                        <span class="calc-name">Штробление стен под проводку</span>
+                    </label>
+                    <div class="count-selector">
+                        <input type="number" id="qty3" value="1" min="1" oninput="calculateTotal()">
+                        <span class="calc-unit">метров</span>
+                    </div>
+                    <span class="calc-price-item">от 350 ₽</span>
+                </div>
+
+                <div class="calc-item simple-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="service4" data-price="3000" onchange="calculateTotal()">
+                        <span class="checkmark"></span>
+                        <span class="calc-name">Сборка и подключение распределительного щита</span>
+                    </label>
+                    <span class="calc-price-item">от 3 000 ₽</span>
+                </div>
+
+                <div class="calc-item simple-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="service5" data-price="25000" onchange="calculateTotal()">
+                        <span class="checkmark"></span>
+                        <span class="calc-name">Полный монтаж проводки в квартире под ключ</span>
+                    </label>
+                    <span class="calc-price-item">от 25 000 ₽</span>
+                </div>
+
+                <!-- Итоговый блок с неоновой анимацией -->
+                <div class="calc-total-box">
+                    <div class="total-text">Предварительный итог: <span id="totalPrice">0</span> ₽</div>
+                    <a href="contacts.html" class="btn btn-calc animate-pulse">Зафиксировать стоимость</a>
+                </div>
             </div>
         </div>
     </main>
 
     <footer class="footer"><div class="container">© 2026 ELEKTRO.PRO</div></footer>
 
+    <!-- Скрипт мгновенного пересчета цен -->
+    <script>
+        function calculateTotal() {
+            let total = 0;
+            
+            // Расчет позиций с количеством
+            if(document.getElementById('service1').checked) {
+                total += parseInt(document.getElementById('service1').getAttribute('data-price')) * parseInt(document.getElementById('qty1').value || 0);
+            }
+            if(document.getElementById('service2').checked) {
+                total += parseInt(document.getElementById('service2').getAttribute('data-price')) * parseInt(document.getElementById('qty2').value || 0);
+            }
+            if(document.getElementById('service3').checked) {
+                total += parseInt(document.getElementById('service3').getAttribute('data-price')) * parseInt(document.getElementById('qty3').value || 0);
+            }
+            
+            // Расчет простых одиночных позиций
+            if(document.getElementById('service4').checked) {
+                total += parseInt(document.getElementById('service4').getAttribute('data-price'));
+            }
+            if(document.getElementById('service5').checked) {
+                total += parseInt(document.getElementById('service5').getAttribute('data-price'));
+            }
+
+            // Анимированный вывод суммы
+            document.getElementById('totalPrice').innerText = total.toLocaleString('ru-RU');
+        }
+    </script>
+
 </body>
 </html>
-Cloudflare: Build for the agent era
-Cloudflare: Build for the agent era
-www.cloudflare.com
